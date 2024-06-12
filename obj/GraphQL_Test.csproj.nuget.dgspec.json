@@ -46,6 +46,10 @@
             "HotChocolate.AspNetCore": {
               "target": "Package",
               "version": "[13.9.5, )"
+            },
+            "JMDict": {
+              "target": "Package",
+              "version": "[1.0.7, )"
             }
           },
           "imports": [

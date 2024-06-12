@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gjzxE20xF5I=",
+  "dgSpecHash": "xPoDURCeWZo=",
   "success": true,
   "projectFilePath": "/Users/vikeo/Documents/github/GraphQL_Test/GraphQL_Test.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "/Users/vikeo/.nuget/packages/hotchocolate.utilities/13.9.5/hotchocolate.utilities.13.9.5.nupkg.sha512",
     "/Users/vikeo/.nuget/packages/hotchocolate.utilities.dependencyinjection/13.9.5/hotchocolate.utilities.dependencyinjection.13.9.5.nupkg.sha512",
     "/Users/vikeo/.nuget/packages/hotchocolate.validation/13.9.5/hotchocolate.validation.13.9.5.nupkg.sha512",
+    "/Users/vikeo/.nuget/packages/jmdict/1.0.7/jmdict.1.0.7.nupkg.sha512",
     "/Users/vikeo/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "/Users/vikeo/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "/Users/vikeo/.nuget/packages/microsoft.extensions.objectpool/8.0.0/microsoft.extensions.objectpool.8.0.0.nupkg.sha512",
