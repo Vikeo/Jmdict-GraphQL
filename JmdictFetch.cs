@@ -5,10 +5,10 @@ namespace JmdictFetch
 {
     public class JmdictFetch
     {
-        // TODO be able to reuse this across functions
+        // TODO Inject instead
         private static readonly DictParser dictParser = new();
 
-        public static async Task<Jmdict?> GetJmdict()
+        public static async Task<Jmdict?> GetRemoteJmdict()
         {
             string baseURL = "http://ftp.edrdg.org/pub/Nihongo/JMdict_e.gz";
 
@@ -42,6 +42,5 @@ namespace JmdictFetch
                 return null;
             }
         }
-
     }
 }
