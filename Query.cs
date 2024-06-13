@@ -2,14 +2,9 @@ using JMDict;
 
 namespace JmdictGQL
 {
-    public class Query
+    public class Query(Jmdict jmdict)
     {
-        private readonly Jmdict _jmdict;
-
-        public Query(Jmdict jmdict)
-        {
-            _jmdict = jmdict;
-        }
+        private readonly Jmdict _jmdict = jmdict;
 
         public IEnumerable<JmdictEntry?> EntriesByReading(string reading)
         {

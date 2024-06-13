@@ -3,12 +3,11 @@ using JMDict;
 
 namespace JmdictFetch
 {
-    public class JmdictFetch
+    public class JmdictFetch(DictParser dictParser)
     {
-        // TODO Inject instead
-        private static readonly DictParser dictParser = new();
+        private readonly DictParser _dictParser = dictParser;
 
-        public static async Task<Jmdict?> GetRemoteJmdict()
+        public async Task<Jmdict?> GetRemoteJmdict()
         {
             string baseURL = "http://ftp.edrdg.org/pub/Nihongo/JMdict_e.gz";
 
@@ -34,7 +33,7 @@ namespace JmdictFetch
                 decompressedStream.Seek(0, SeekOrigin.Begin);
 
                 // Pass the decompressed stream to the parser method directly
-                return dictParser.ParseXml<Jmdict>(decompressedStream);
+                return _dictParser.ParseXml<Jmdict>(decompressedStream);
             }
             catch (Exception exception)
             {
