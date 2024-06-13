@@ -10,6 +10,8 @@ nupkg/
 
 .obj
 
+.dictionaries
+
 # Rider
 .idea/
 
