@@ -8,25 +8,25 @@ schemes:
 produces:
 - application/json
 
-# Backend configuration for the API
 x-google-backend:
-  # Use a fully qualified URL with the scheme (http/https), host, and optionally port
   address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app
 
-# Security definitions for API key
 securityDefinitions:
   api_key:
     type: apiKey
     name: x-api-key
     in: header
 
-# Paths and operations
+# Add CORS support
+x-google-endpoints:
+- name: jmdict-gql-zo3qquyvrq-ew.a.run.app
+  allowCors: true  # Enable CORS
+
 paths:
   /hello:
     get:
       summary: Greet a user
       operationId: hello
-      # Backend configuration for this specific path/operation
       x-google-backend:
         address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app
       security:
@@ -63,4 +63,20 @@ paths:
         '200':
           description: A successful response
           schema:
-            type: object  # The response will be a JSON object
+            type: object
+
+    options:
+      summary: CORS preflight
+      operationId: graphqlOptions
+      x-google-backend:
+        address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app/graphql
+      consumes:
+        - application/json
+      responses:
+        '204':
+          description: No Content - CORS preflight request successful
+      x-google-extensions:
+        - x-google-cors:
+            allowMethods: "POST, OPTIONS"
+            allowHeaders: "Content-Type, x-api-key"
+            allowOrigin: "*"

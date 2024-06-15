@@ -42,24 +42,6 @@ namespace JmdictGQL
         {
             // Configure the HTTP request pipeline here
             app.UseCors("AllowAny");
-
-            // Middleware to handle OPTIONS requests
-            app.Use(async (ctx, next) =>
-            {
-                if (ctx.Request.Method == "OPTIONS")
-                {
-                    ctx.Response.Headers.Append("Access-Control-Allow-Origin", "*");
-                    ctx.Response.Headers.Append("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-                    ctx.Response.Headers.Append("Access-Control-Allow-Headers", "Content-Type, x-api-key");
-                    ctx.Response.StatusCode = 204;
-                    await ctx.Response.CompleteAsync();
-                }
-                else
-                {
-                    await next();
-                }
-            });
-
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
