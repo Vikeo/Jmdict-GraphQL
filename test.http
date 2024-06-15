@@ -1,0 +1,8 @@
+### GraphQL Query
+POST https://jmdictapi-8m8vbf6w.ew.gateway.dev/graphql
+Content-Type: application/json
+x-api-key: apikey
+
+{
+  "query": "query { entriesByReading(reading: \"か\") { kanji { expression } readings { information kana noKanji priorities restrictions } } }"
+}

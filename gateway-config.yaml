@@ -1,0 +1,66 @@
+swagger: '2.0'
+info:
+  title: jmdictgateway
+  description: Sample API on API Gateway with a Cloud Run backend
+  version: 1.0.0
+schemes:
+- https
+produces:
+- application/json
+
+# Backend configuration for the API
+x-google-backend:
+  # Use a fully qualified URL with the scheme (http/https), host, and optionally port
+  address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app
+
+# Security definitions for API key
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: x-api-key
+    in: header
+
+# Paths and operations
+paths:
+  /hello:
+    get:
+      summary: Greet a user
+      operationId: hello
+      # Backend configuration for this specific path/operation
+      x-google-backend:
+        address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+
+  /graphql:
+    post:
+      summary: GraphQL Endpoint
+      operationId: graphqlPost
+      x-google-backend:
+        address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app/graphql
+      consumes:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: GraphQL query
+          required: true
+          schema:
+            type: object
+            properties:
+              query:
+                type: string
+              variables:
+                type: object
+      security:
+        - api_key: []
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: object  # The response will be a JSON object
