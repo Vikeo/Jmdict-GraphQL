@@ -1,5 +1,5 @@
 ### GraphQL Query
-POST https://jmdictapi-8m8vbf6w.ew.gateway.dev/graphql
+POST https://jmdictapi-8m8vbf6w.ew.gateway.dev/gql
 Content-Type: application/json
 x-api-key: apikey
 
