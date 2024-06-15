@@ -10,6 +10,8 @@ nupkg/
 
 .obj
 
+DEV_README.md
+
 .dictionaries
 
 # Rider
