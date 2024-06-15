@@ -37,12 +37,12 @@ paths:
           schema:
             type: string
 
-  /graphql:
+  /gql:
     post:
       summary: GraphQL Endpoint
       operationId: graphqlPost
       x-google-backend:
-        address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app/graphql
+        address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app/gql
       consumes:
         - application/json
       parameters:
@@ -69,7 +69,7 @@ paths:
       summary: CORS preflight
       operationId: graphqlOptions
       x-google-backend:
-        address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app/graphql
+        address: https://jmdict-gql-zo3qquyvrq-ew.a.run.app/gql
       consumes:
         - application/json
       responses:

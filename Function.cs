@@ -10,7 +10,7 @@ namespace JmdictGQL
     {
         public async Task HandleAsync(HttpContext context)
         {
-            await context.Response.WriteAsync("Hello from Google Cloud Function!");
+            await context.Response.WriteAsync("Use the /gql route to access the GraphQL endpoint.");
         }
     }
 
@@ -45,7 +45,7 @@ namespace JmdictGQL
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGraphQL();
+                endpoints.MapGraphQL("/gql");
             });
         }
     }
