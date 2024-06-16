@@ -21,9 +21,13 @@ namespace JmdictGQL
             // Configure services here
             var dictParser = new DictParser();
             var jmdictPath = "dictionaries/JMdict_e.xml";
+            var kanjidicPath = "dictionaries/kanjidic2.xml";
             var jmdict = dictParser.ParseXml<Jmdict>(jmdictPath);
+            var kanjidic = dictParser.ParseXml<Kanjidic>(kanjidicPath);
 
             services.AddSingleton(jmdict);
+            services.AddSingleton(kanjidic);
+
             services
                 .AddCors(options =>
                 {
