@@ -6,14 +6,6 @@ using JMDict;
 
 namespace JmdictGQL
 {
-    public class Function : IHttpFunction
-    {
-        public async Task HandleAsync(HttpContext context)
-        {
-            await context.Response.WriteAsync("Use the /gql route to access the GraphQL endpoint.");
-        }
-    }
-
     public class Startup : FunctionsStartup
     {
         public override void ConfigureServices(WebHostBuilderContext context, IServiceCollection services)
