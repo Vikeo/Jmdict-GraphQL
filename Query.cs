@@ -17,9 +17,6 @@ namespace JmdictGQL
 
         public KanjidicCharacter? KanjiEntryByKanji(string kanji)
         {
-            Console.WriteLine(kanji);
-            Console.WriteLine(kanji.FirstOrDefault());
-
             return _kanjidic.Characters.FirstOrDefault(c => c.Literal.Equals(kanji));
         }
     }
